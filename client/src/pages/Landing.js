@@ -5,12 +5,12 @@ import Logo from "../assets/world.png"
 export default function Landing() {
   return (
     <div className='flex flex-col items-center justify-center h-full v-full'>
-        <Navbar/>
-        <div className='w-1/2 flex flex-col justify-center items-center gap-4'>
+        <Navbar current="Home" />
+        <div className='md:w-2/3 lg:w-1/2 flex flex-col justify-center items-center gap-4'>
             <div className='h-48 w-48'>
                 <img src={Logo} />
             </div>
-            <div className='text-5xl font-bold text-center font-header'>
+            <div className='text-4xl md:text-5xl font-bold text-center font-header'>
                 International<br/>Favours
             </div>
             <div className='w-4/5 text-center font-body font-light'>
