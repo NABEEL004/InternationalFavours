@@ -4,7 +4,7 @@ import Logo from "../assets/world.png"
 
 export default function Landing() {
   return (
-    <div className='flex flex-col items-center justify-center h-full v-full'>
+    <div className='flex flex-col items-center justify-center h-full v-full font-body'>
         <Navbar current="Home" />
         <div className='md:w-2/3 lg:w-1/2 flex flex-col justify-center items-center gap-4'>
             <div className='h-48 w-48'>

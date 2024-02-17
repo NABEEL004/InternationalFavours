@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import ProfileIcon from './ProfileIcon'
 import ChatIcon from './ChatIcon'
 
+
 export default function Menu({currentPage}) {
     const [isLoggedIn, setLogIn] = useState(false)
     const [current, setCurrent] = useState("Browse")
@@ -20,7 +21,7 @@ export default function Menu({currentPage}) {
             <MenuItem name="FAQs" current={current} link="faq"/>
             <SignInOut isLoggedIn = {isLoggedIn}/>
             <ProfileIcon isLoggedIn = {isLoggedIn}/>
-            <ChatIcon isLoggedIn = {isLoggedIn}/>
+            <ChatIcon isLoggedIn = {isLoggedIn} haveMessages={true}/>
 
         </div>
     )

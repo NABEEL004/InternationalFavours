@@ -5,7 +5,7 @@ module.exports = {
     "./src/pages/Landing.js",
     "./src/components/Menu.js",
     "./src/components/Navbar.js",
-    "./src/**/*.{html,js}"
+    "./src/**/*.{html,js,jsx}"
   ],
   theme: {
     extend: {
