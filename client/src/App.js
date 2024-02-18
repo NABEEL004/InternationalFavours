@@ -5,6 +5,7 @@ import Landing from "./pages/Landing"
 import Browse from './pages/Browse';
 import Error from './pages/Error';
 import SignIn from './pages/SignIn';
+import Faq from './pages/Faq';
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <SignIn/>,
+  },
+  {
+    path: "/faq",
+    element: <Faq/>,
   },
 ])
 
