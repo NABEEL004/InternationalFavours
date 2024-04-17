@@ -2,7 +2,7 @@ import { useState, useContext, createContext } from 'react';
 
 const AuthContext = createContext(null);
 
-export const authProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
     const signIn = async (email, password) => {
@@ -16,6 +16,7 @@ export const authProvider = ({ children }) => {
 
         if (response.ok) {
             setUser({ email });  // Set the user as authenticated
+            console.log("email set as", email)
         } else {
             throw new Error('Failed to sign in');
         }

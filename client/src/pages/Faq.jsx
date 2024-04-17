@@ -64,10 +64,34 @@ const faqs = [
       answer: "If you wish to delete your account, please go to your account settings and select the delete account option. Keep in mind that this action is irreversible."
     }
   ];
+
+function highlightText(text, highlight) {
+    if (!highlight.trim()) {
+      return [<span key="0">{text}</span>];
+    }
+    const regex = new RegExp(`(${highlight})`, 'gi');
+    const parts = text.split(regex);
+  
+    return parts.filter(part => part).map((part, i) => 
+      regex.test(part) ? <span key={i} className="bg-yellow-200">{part}</span> : <span key={i}>{part}</span>
+    );
+  }
   
 
 export default function Faq() {
     const [searchFilter, setSearchFilter] = useState("")
+    const [filteredFAQ, setFilteredFAQ] = useState(faqs)
+
+    const handleChange = (e) => {
+      const value = e.target.value
+      setSearchFilter(value)
+      const lowercasedValue = value.toLowerCase();
+      const filtered = faqs.filter(faq =>
+        faq.question.toLowerCase().includes(lowercasedValue) ||
+        faq.answer.toLowerCase().includes(lowercasedValue)
+      );
+      setFilteredFAQ(filtered);
+    }
 
   return (
     <div className='font-body'>
@@ -78,19 +102,20 @@ export default function Faq() {
                 <input 
                     type="text" 
                     placeholder='Search' 
-                    onChange={(e) => setSearchFilter(e.target.value)}
+                    onChange={handleChange}
+                    value={searchFilter}
                     className='h-16 w-[28rem] rounded-xl px-5 mt-8 font-body text-lg '
                 />
             </form>
             <div className='bg-white flex flex-col gap-3 py-12 px-12 rounded-3xl justify-center items-center w-4/5 my-12'>
                 <ul className='list-decimal w-4/5'>
-                    {faqs.map(question => {
+                    {filteredFAQ.length > 0 ? filteredFAQ.map(question => {
                         return (
-                            <div className='my-8'>
-                                <li className='font-semibold text-lg mb-2'>{question.question}</li>
-                                <p>{question.answer}</p>
+                            <div key={question.question} className='my-8'>
+                                <li  className='font-semibold text-lg mb-2'>{highlightText(question.question, searchFilter)}</li>
+                                <p>{highlightText(question.answer, searchFilter)}</p>
                             </div>
-                        )})
+                        )}) : "No Relevant QnAs found. Please try another search or contact us at info@internationalfavours.com for any queries."
                     }
                 </ul>
             </div>

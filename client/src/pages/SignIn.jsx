@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Link, useHistory, useLocation } from 'react-router-dom'
-// import { useAuth } from '../auth/AuthContext'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { useAuth } from '../auth/AuthContext'
 
 import Navbar from '../components/Navbar'
 import MiniLogo from '../components/MiniLogo'
@@ -9,17 +9,18 @@ export default function SignIn() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const auth = useAuth();
-    const history = useHistory()
+    const navigate = useNavigate()
     const location = useLocation();
     const { from } = location.state || { from : { pathname: "/"} }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             await auth.signIn(email, password);
-            history.replace(from);
+            navigate(from);
         } catch (error) {
             alert('Authentication failed');
+            console.log(error)
         }
     }
   return (

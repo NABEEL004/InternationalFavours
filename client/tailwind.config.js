@@ -19,7 +19,6 @@ module.exports = {
         'header' : ['"Open Sans"']
       }
     },
-    
   },
   plugins: [],
 }

@@ -4,10 +4,12 @@ import SignInOut from './SignInOut'
 import { useState, useEffect } from 'react'
 import ProfileIcon from './ProfileIcon'
 import ChatIcon from './ChatIcon'
+import { useAuth } from '../auth/AuthContext'
 
 
 export default function Menu({currentPage}) {
-    const [isLoggedIn, setLogIn] = useState(false)
+    const { user } = useAuth();
+    // const [isLoggedIn, setLogIn] = useState(false)
     const [current, setCurrent] = useState("Browse")
 
     useEffect(() => {
@@ -19,9 +21,9 @@ export default function Menu({currentPage}) {
             <MenuItem name="Home" current={current} link="" />
             <MenuItem name="Browse" current={current} link="browse"/>
             <MenuItem name="FAQs" current={current} link="faq"/>
-            <SignInOut isLoggedIn = {isLoggedIn}/>
-            <ProfileIcon isLoggedIn = {isLoggedIn}/>
-            <ChatIcon isLoggedIn = {isLoggedIn} haveMessages={true}/>
+            <SignInOut isLoggedIn = {user != null}/>
+            <ProfileIcon isLoggedIn = {user != null}/>
+            <ChatIcon isLoggedIn = {user != null} haveMessages={true}/>
 
         </div>
     )
