@@ -7,6 +7,7 @@ import Browse from './pages/Browse';
 import Error from './pages/Error';
 import SignIn from './pages/SignIn';
 import Faq from './pages/Faq';
+import Chat from './pages/Chat.js';
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/faq",
     element: <Faq/>,
+  },
+  {
+    path: "/chat",
+    element: <Chat/>,
   },
 ])
 

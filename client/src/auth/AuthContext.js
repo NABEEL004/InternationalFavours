@@ -3,7 +3,7 @@ import { useState, useContext, createContext } from 'react';
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState("nabeel@admin.com");
 
     const signIn = async (email, password) => {
         const response = await fetch('http://localhost:8080/api/validate', {
