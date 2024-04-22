@@ -9,7 +9,7 @@ const Chat = () => {
     <div className='flex justify-center items-center w-full h-full'>
         <Navbar isIcon={true} current="Chat" />
         <div className='bg-dark-green h-[32rem] w-[24rem] rounded-3xl translate-x-12 flex flex-col items-center py-8'>
-            <div className='w-full flex flex-col px-2'>
+            <div className='w-full flex flex-col px-2 overflow-y-scroll'>
                 <h2 className='font-semibold text-2xl font-body text-center -translate-x-12'>Chats</h2>
                 <div className='overflow-y-scroll'>
                     <ChatItem/>
