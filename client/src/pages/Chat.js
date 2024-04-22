@@ -1,16 +1,26 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Location from '../assets/location.png'
+import ChatItem from '../components/ChatItem'
+import Message from '../components/Message'
 
 const Chat = () => {
   return (
     <div className='flex justify-center items-center w-full h-full'>
         <Navbar isIcon={true} current="Chat" />
         <div className='bg-dark-green h-[32rem] w-[24rem] rounded-3xl translate-x-12 flex flex-col items-center py-8'>
-            <div className='w-full flex flex-col px-8'>
-                <h2 className='font-semibold text-2xl font-body'>Chats</h2>
-                <div>
-                    chats
+            <div className='w-full flex flex-col px-2'>
+                <h2 className='font-semibold text-2xl font-body text-center -translate-x-12'>Chats</h2>
+                <div className='overflow-y-scroll'>
+                    <ChatItem/>
+                    <ChatItem/>
+                    <ChatItem/>
+                    <ChatItem/>
+                    <ChatItem/>
+                    <ChatItem/>
+                    <ChatItem/>
+                    <ChatItem/>
+                    <ChatItem/>
                 </div>
             </div>
         </div>
@@ -28,8 +38,11 @@ const Chat = () => {
                     task name
                 </div>
             </div>
-            <div>
-                messages container
+            <div className='overflow-y-scroll'>
+                <Message/>
+                <Message/>
+                <Message/>
+                <Message/>
             </div>
             <form className='w-full px-8 flex justify-between'>
                 <input type="text" placeholder="Type message here..."></input>
