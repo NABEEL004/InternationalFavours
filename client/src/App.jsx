@@ -1,13 +1,14 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { AuthProvider } from './auth/AuthContext.js';
+import { AuthProvider } from './auth/AuthContext.jsx';
 
-import Landing from "./pages/Landing"
-import Browse from './pages/Browse';
-import Error from './pages/Error';
-import SignIn from './pages/SignIn';
-import Faq from './pages/Faq';
-import Chat from './pages/Chat.js';
+import Landing from "./pages/Landing.jsx"
+import Browse from './pages/Browse.jsx';
+import Error from './pages/Error.jsx';
+import SignIn from './pages/SignIn.jsx';
+import Faq from './pages/Faq.jsx';
+import Chat from './pages/Chat.jsx';
+import Request from './pages/Request.jsx';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/chat",
     element: <Chat/>,
+  },
+  {
+    path: "/request",
+    element: <Request/>,
   },
 ])
 
