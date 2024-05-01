@@ -1,8 +1,10 @@
 import React from 'react'
 import Navbar from '../components/Navbar.jsx'
 import Logo from "../assets/world.png"
+import { Link } from 'react-router-dom'
 
 export default function Landing() {
+
   return (
     <div className='flex flex-col items-center justify-center h-full v-full font-body'>
         <Navbar current="Home" />
@@ -16,9 +18,9 @@ export default function Landing() {
             <div className='w-4/5 text-center font-body font-light'>
                 Seek help from trusted individuals across the world! Ask for travel advice, help to run an errand, or even purchase something from a specific country to bring to you. The world is your limit.
             </div>
-            <div className='bg-white rounded-full py-3 px-6 cursor-pointer font-body hover:scale-110 transition'>
+            <Link to="/request" className='bg-white rounded-full py-3 px-6 cursor-pointer font-body hover:scale-110 transition'>
                 Ask Away!
-            </div>
+            </Link>
 
         </div>
 

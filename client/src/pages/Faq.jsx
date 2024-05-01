@@ -107,7 +107,7 @@ export default function Faq() {
                     className='h-16 w-[28rem] rounded-xl px-5 mt-8 font-body text-lg '
                 />
             </form>
-            <div className='bg-white flex flex-col gap-3 py-12 px-12 rounded-3xl justify-center items-center w-4/5 my-12'>
+            <div className='bg-white flex flex-col gap-3 py-12 px-12 rounded-3xl justify-center items-center w-3/5 min-w-[36rem] my-12'>
                 <ul className='list-decimal w-4/5'>
                     {filteredFAQ.length > 0 ? filteredFAQ.map(question => {
                         return (
