@@ -10,7 +10,6 @@ const countries = [{
 export default function Search() {
   const [searchFilter, setSearchFilter] = useState("")
   const [countryFilter, setCountryFilter] = useState("")
-  const [stateFilter, setStateFilter] = useState("")
   return (
     <div>
       <form className='flex flex-col gap-5 justify-center items-center focus:outline-none'>
@@ -29,13 +28,6 @@ export default function Search() {
             type="text" 
             value={countryFilter} 
             onChange={(e) => setCountryFilter(e.target.value)}
-            className='h-12 w-72 rounded-lg px-5 font-body'
-            />
-          <input 
-            placeholder="State" 
-            type="text" 
-            value={stateFilter} 
-            onChange={(e) => setStateFilter(e.target.value)}
             className='h-12 w-72 rounded-lg px-5 font-body'
             />
           <select 

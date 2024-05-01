@@ -19,8 +19,8 @@ export default function Menu({currentPage}) {
     return (
         <div className='flex gap-6 h-20 justify-center items-center pr-6'>
             <MenuItem name="Home" current={current} link="" />
-            <MenuItem name="Browse" current={current} link="browse"/>
             <MenuItem name="FAQs" current={current} link="faq"/>
+            <MenuItem name="Browse" current={current} link="browse"/>
             <MenuItem name="Request" current={current} link="request" />
             <SignInOut isLoggedIn = {user != null}/>
             <ProfileIcon isLoggedIn = {user != null}/>

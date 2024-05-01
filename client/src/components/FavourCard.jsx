@@ -9,7 +9,7 @@ export default function FavourCard({ title, location, user, desc}) {
         <div className='flex flex-col justify-center items-center group-hover:translate-y-[-0.5rem] translate-y-[1.3rem] transition duration-300'>
             <h3 className='text-lg font-medium w-3/4 text-center h-[28%] flex items-end justify-end'>{title}</h3>
             <div className='flex gap-5 text-[0.7rem] font-semibold h-[18%] justify-center items-center'>
-                <div className='flex gap-1'>
+                <div className='flex gap-1 items-center'>
                     <img 
                         src={Location} 
                         alt="Location" 
@@ -17,7 +17,7 @@ export default function FavourCard({ title, location, user, desc}) {
                     />
                     {location}
                 </div>
-                <div className='flex gap-1'>
+                <div className='flex gap-1 items-center'>
                     <img 
                         src={User} 
                         alt="User" 
